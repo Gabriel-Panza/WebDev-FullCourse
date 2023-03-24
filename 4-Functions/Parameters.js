@@ -13,3 +13,21 @@ function add(){
 console.log(add(1,2,3));
 console.log(add(1,2,"Test"));
 console.log(add("c","a","r"));
+
+function subtract1(a=1,b=1)
+{
+    return a-b;
+}
+
+console.log(subtract1());
+console.log(subtract1(3));
+
+function subtract2(a,b)
+{
+    a = a || 1;
+    b = b || 1;
+    return a-b;
+}
+
+console.log(subtract2());
+console.log(subtract2(3));
