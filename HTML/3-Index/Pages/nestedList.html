@@ -1,0 +1,50 @@
+<!-- Nested Lists -->
+<h1>Project</h1>
+<ul class="tree">
+    <li>
+        <span folder>Backend</span>
+        <ul>
+            <li>
+                <span folder>App</span> 
+                <ul>
+                    <li>product.js</li>
+                    <li>user.js</li>
+                    <li>sellPoint.js</li>
+                </ul>
+            </li>
+            <li>
+                <span folder>Config</span>
+                <ul>
+                    <li>bank.js</li>
+                    <li>routes.js</li>
+                    <li>server.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span folder>Frontend</span>
+        <ul>
+            <li>
+                <span folder>Public</span>
+                <ul>
+                    <li>app.cc</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+    document.querySelectorAll('[folder]').forEach(folderEvent => {
+        folderEvent.onclick = function(f) {
+            const ul = folderEvent.nextElementSibling
+            const display = ul.style.display
+            ul.style.display = display === 'none' ? 'block' : 'none'
+        }
+    })
+</script>

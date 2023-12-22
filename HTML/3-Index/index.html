@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Exercises</title>
+    <style>
+        #Content{
+            padding: 30px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HTML Exercises</h1>
+    </header>
+    <nav>
+        <a href="Pages/test.html">00- Testing</a><br>
+        <a href="Pages/text.html">01- Text Language</a><br>
+        <a href="Pages/list.html">02- Lists</a><br>
+        <a href="Pages/nestedList.html">03- Nested List</a><br>
+        <a href="Pages/links.html">04 - Links</a><br>
+        <a href="Pages/tables.html">05 - Tables</a><br>
+        <a href="Pages/images.html">06 - Images</a><br>
+        <a href="Pages/video.html">07 - Video</a><br>
+        <a href="Pages/tagsNaoVisuais.html">08 - Not Visual Tags</a><br>
+    </nav>
+    <section id="Content"></section>
+    <footer>
+        WebDev-FullCourse
+    </footer>
+    <script>
+        document.querySelectorAll('a').forEach(link =>{
+            link.onclick = function(f) {
+                f.preventDefault()
+                const content = document.getElementById('Content')
+                fetch(link.href)
+                    .then(resp => resp.text())
+                    .then(html => content.innerHTML = html)
+            }
+        })
+    </script>
+</body>
+</html>
