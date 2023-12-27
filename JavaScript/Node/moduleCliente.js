@@ -1,5 +1,5 @@
-const moduleA = require("./ModuleA")
-const moduleB = require("./ModuleB")
+const moduleA = require("./moduleA")
+const moduleB = require("./moduleB")
 
 console.log(moduleA.welcome)
 console.log(moduleA.hi)
