@@ -28,6 +28,29 @@
     <div>Animar!</div>
 
     <script>
-        // ...
+        function changeWidth(value, duration, callback){
+            $('div').animate({width: `+=${value}`}, duration, callback)
+        }
+        function movediagonally(value, horizontal_direction, duration, callback){
+            if (horizontal_direction=='left')
+                $('div').animate({top: `+=${value}`, left: `+=${value}`}, duration, callback)
+            else if (horizontal_direction=='right')
+                $('div').animate({top: `+=${value}`, right: `+=${value}`}, duration, callback)
+        }
+        function rotate(value, duration, callback){
+            $('div').animate({transform: `+=${value}`}, {
+                step: function (value){
+                    $(this).css('transform', `rotate(${value}deg)`)
+                }, duration: duration
+            }, 'linear', callback)
+        }
+
+        changeWidth(300, 100, () => {
+            changeWidth(300, 'slow', () =>{
+                movediagonally(300, 3000, () =>{
+                    rotate(3600, 3000)
+                })
+            })
+        })
     </script>
 </body>
